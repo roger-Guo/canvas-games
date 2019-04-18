@@ -99,7 +99,7 @@ Game.prototype.collision = function() {
   }
   
   if (this.ball.y > (this.height - this.board.height - this.ball.r)) {
-    if (Math.abs(this.ball.x - this.board.x) <= this.board.width / 2) {
+    if (Math.abs(this.ball.x - this.board.x) <= (this.board.width / 2)) {
       this.ball.speedY *= -1;
     } else {
       this.status = 'gameOver';
@@ -109,6 +109,7 @@ Game.prototype.collision = function() {
   }else if (this.ball.x <= this.ball.r || this.ball.x >= (this.width-this.ball.r)) this.ball.speedX *= -1;
   else if (this.ball.y <= this.ball.r) this.ball.speedY *= -1;
 }
+
 const game = new Game();
 setTimeout(() => {
   game.init();
