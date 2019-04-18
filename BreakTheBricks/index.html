@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BreakTheBricks</title>
+  <style>
+    canvas {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      border: 1px solid #000000;
+    }  
+    h3 {
+      text-align: center;
+    }
+    #score {
+      font-size: 30px;
+      vertical-align: middle;
+      color: pink;
+    }
+  </style>
+</head>
+<body>
+  <h3>press 'Space' to start or reset or pause </h3>
+  <h3>parse 'left' or 'right' to control</h3>
+  <h3>Score: <span id="score">0</span></h3>
+  <canvas width="270px" height="480px" id="bottomCanvas"></canvas>
+  <canvas width="270px" height="480px" id="topCanvas"></canvas>
+  <script src="src/ball.js"></script>
+  <script src="src/board.js"></script>
+  <script src="src/brick.js"></script>
+  <script src="src/game.js"></script>
+</body>
+</html>
