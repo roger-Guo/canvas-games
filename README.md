@@ -2,4 +2,4 @@
 
 ## break the brick
 
-![break the brick]('./img/game-break-the-brick.png')
+![break the brick](https://github.com/roger-Guo/canvas-games/raw/master/img/game-break-the-brick.png)
