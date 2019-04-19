@@ -1,8 +1,4 @@
-function Brick(x, y) {
-  this.startX = x;
-  this.startY = y;
-  this.x = x;
-  this.y = y;
+function Brick() {
   this.width = 30;
   this.height = 15;
   this.cacheCanvas = document.createElement('canvas')

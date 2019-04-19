@@ -13,14 +13,14 @@ function Game() {
   this.height = 480;
   this.moveLeftCode = 37;
   this.moveRightCode = 39;
-  this.isDeleteBrick = true;
   this.score = 0;
+  this.isDeleteBrick = true;
 }
 
 Game.prototype.init = function() {
   this.status = 'init';
-  this.bottomCanvasContext.fillStyle = 'rgba(255,255,255)';
   this.isDeleteBrick = true;
+  this.bottomCanvasContext.fillStyle = 'rgba(255,255,255)';
   this.score = 0;
   this.setBricks();
   this.ball.init();
@@ -41,11 +41,13 @@ Game.prototype.update = function() {
     this.topCanvasContext.clearRect(0, 0, this.width, this.height);                             
     this.bricks.forEach(position => {
       this.topCanvasContext.drawImage(this.brick.cacheCanvas, position.x, position.y);
-    })  
+    }) 
   }
+    
 }
 
 Game.prototype.setBricks = function() {
+  this.bricks = [];
   for(let x = 0; x < 9; x++) {
     for (let y = 0; y < 9; y++) {
       this.bricks.push({
@@ -89,9 +91,9 @@ Game.prototype.collision = function() {
       y: this.bricks[i].y + this.brick.height / 2,
     }
     if (this.isBoxCircleIntersect(tempBrick)) {
+      this.isDeleteBrick = true;
       this.score++;
       this.bricks.splice(i, 1);
-      this.isDeleteBrick = true;
       if (Math.abs(this.ball.y - tempBrick.y) > this.brick.height / 2) this.ball.speedY *= -1;
       else this.ball.speedX *= -1;
       return;
